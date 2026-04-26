@@ -99,6 +99,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn--dark:hover { background: var(--forest-light); transform: translateY(-2px); }
 .btn--lg { padding: 16px 36px; font-size: .95rem; }
 .btn--sm { padding: 10px 20px; font-size: .82rem; }
+.btn--disabled, .res-card__link--disabled { opacity: .55; cursor: not-allowed; pointer-events: none; }
+.btn--disabled:hover, .res-card__link--disabled:hover { background: transparent; color: var(--forest); border-color: var(--forest); transform: none; box-shadow: none; }
 .btn--full { width: 100%; justify-content: center; }
 
 /* SECTIONS */
