@@ -38,4 +38,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // Nav shadow
   const nav = document.querySelector('.nav');
   if (nav) window.addEventListener('scroll', () => { nav.style.boxShadow = scrollY > 40 ? '0 4px 30px rgba(0,0,0,.06)' : 'none'; });
+
+  // Contact form -> mailto with topic as subject
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const firstname = (document.getElementById('firstname') || {}).value || '';
+      const lastname = (document.getElementById('lastname') || {}).value || '';
+      const email = (document.getElementById('email') || {}).value || '';
+      const phone = (document.getElementById('phone') || {}).value || '';
+      const subject = (document.getElementById('subject') || {}).value || 'Enquiry';
+      const message = (document.getElementById('msg') || {}).value || '';
+      const consent = document.getElementById('privacy-consent');
+      if (consent && !consent.checked) {
+        consent.focus();
+        return;
+      }
+      const body =
+        'Name: ' + firstname + ' ' + lastname + '\n' +
+        'Email: ' + email + '\n' +
+        'Phone: ' + phone + '\n' +
+        'Topic: ' + subject + '\n\n' +
+        'Message:\n' + message;
+      const mailto = 'mailto:info@senseislam.org' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+    });
+  }
 });
