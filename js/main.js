@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
 
       const formData = new FormData(contactForm);
+      const topic = formData.get('subject') || 'Enquiry';
+      formData.set('subject', 'SenseIslam Contact: ' + topic);
       const body = new URLSearchParams();
       formData.forEach((value, key) => { body.append(key, value); });
 
