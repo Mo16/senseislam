@@ -51,7 +51,9 @@
         <div>
           <div style="background:var(--white);border-radius:var(--r-lg);padding:36px;border:1px solid var(--border)">
             <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:22px;color:var(--charcoal)">Send Us a Message</h3>
-            <form id="contact-form" action="mailto:info@senseislam.org" method="POST" enctype="text/plain">
+            <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact.html?sent=1">
+              <input type="hidden" name="form-name" value="contact">
+              <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
               <div class="form-grid">
                 <div class="form-group"><label for="firstname">First Name *</label><input type="text" id="firstname" name="firstname" required placeholder="First name"></div>
                 <div class="form-group"><label for="lastname">Last Name *</label><input type="text" id="lastname" name="lastname" required placeholder="Last name"></div>
@@ -66,6 +68,11 @@
                 <div class="full-span"><button type="submit" class="btn btn--dark btn--lg btn--full">Send Message</button></div>
               </div>
             </form>
+            <div id="contact-success" class="contact-success" hidden>
+              <div class="contact-success__icon">✓</div>
+              <h4 class="contact-success__title">Message sent — JazakAllah khair!</h4>
+              <p class="contact-success__text">Thank you for getting in touch. We aim to respond within 24-48 hours, in shaa Allah.</p>
+            </div>
             <p style="font-size:.78rem;color:var(--text-muted);margin-top:14px;text-align:center">All enquiries are treated with complete confidentiality.</p>
           </div>
         </div>
