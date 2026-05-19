@@ -284,13 +284,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .contact-card__label { font-weight: 600; margin-bottom: 2px; color: var(--charcoal); font-size: .9rem; }
 .contact-card__value { color: var(--forest); font-weight: 500; font-size: .9rem; }
 
-/* ANIMATIONS */
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-.stagger > *:nth-child(1) { transition-delay: 0s; }
-.stagger > *:nth-child(2) { transition-delay: .1s; }
-.stagger > *:nth-child(3) { transition-delay: .15s; }
-.stagger > *:nth-child(4) { transition-delay: .2s; }
+/* ANIMATIONS — fade-up disabled site-wide */
+.fade-up { opacity: 1; transform: none; transition: none; }
+.fade-up.visible { opacity: 1; transform: none; }
+.stagger > * { transition-delay: 0s; }
 
 .text-center { text-align: center; }
 .mt-20 { margin-top: 20px; }
