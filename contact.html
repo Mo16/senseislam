@@ -51,16 +51,16 @@
         <div>
           <div style="background:var(--white);border-radius:var(--r-lg);padding:36px;border:1px solid var(--border)">
             <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:22px;color:var(--charcoal)">Send Us a Message</h3>
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact.html?sent=1">
+            <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact.html?sent=1" autocomplete="on">
               <input type="hidden" name="form-name" value="contact">
-              <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+              <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" autocomplete="off"></label></p>
               <div class="form-grid">
-                <div class="form-group"><label for="firstname">First Name *</label><input type="text" id="firstname" name="firstname" required placeholder="First name"></div>
-                <div class="form-group"><label for="lastname">Last Name *</label><input type="text" id="lastname" name="lastname" required placeholder="Last name"></div>
-                <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required placeholder="you@email.com"></div>
-                <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required placeholder="07XXX XXXXXX"></div>
-                <div class="form-group"><label for="subject">Subject *</label><select id="subject" name="subject" required><option value="">Select a topic...</option><option>I'm exploring Islam</option><option>I'm a new Muslim seeking support</option><option>I'd like to take my Shahadah</option><option>I have a question about Islam</option><option>I'm a Muslim with doubts</option><option>I'd like to volunteer</option><option>Donation enquiry</option><option>Request materials</option><option>Join Mailing List</option><option>Other</option></select></div>
-                <div class="form-group full-span"><label for="msg">Your Message *</label><textarea id="msg" name="message" required placeholder="Tell us how we can help..."></textarea></div>
+                <div class="form-group"><label for="firstname">First Name *</label><input type="text" id="firstname" name="firstname" autocomplete="given-name" required placeholder="First name"></div>
+                <div class="form-group"><label for="lastname">Last Name *</label><input type="text" id="lastname" name="lastname" autocomplete="family-name" required placeholder="Last name"></div>
+                <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@email.com"></div>
+                <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="07XXX XXXXXX"></div>
+                <div class="form-group"><label for="subject">Subject *</label><select id="subject" name="subject" autocomplete="off" required><option value="">Select a topic...</option><option>I'm exploring Islam</option><option>I'm a new Muslim seeking support</option><option>I'd like to take my Shahadah</option><option>I have a question about Islam</option><option>I'm a Muslim with doubts</option><option>I'd like to volunteer</option><option>Donation enquiry</option><option>Request materials</option><option>Join Mailing List</option><option>Other</option></select></div>
+                <div class="form-group full-span"><label for="msg">Your Message *</label><textarea id="msg" name="message" autocomplete="off" required placeholder="Tell us how we can help..."></textarea></div>
                 <div class="full-span" style="display:flex;align-items:flex-start;gap:10px;margin-top:4px">
                   <input type="checkbox" id="privacy-consent" name="privacy-consent" required style="margin-top:5px;flex-shrink:0;accent-color:var(--forest)">
                   <label for="privacy-consent" style="font-size:.85rem;color:var(--text-light);line-height:1.6;font-weight:500">I have read and agree to the <a href="privacy.html" style="color:var(--forest);font-weight:600;text-decoration:underline">Privacy Policy</a>. *</label>
